@@ -1,0 +1,60 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:1rem;
+        }
+        
+        #google-signin-button {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #google-signin-button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        #google-signin-button > img{
+            margin-right: 10px;
+            height: 1.5rem;
+        }
+        
+        .text {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;"> Welcome to HitUP login menu</h1>
+    <div class="buttons">
+        {% if user.is_authenticated %}
+            <p>Welcome. You are logged in as {{user.username}}, {{user.email}} </p>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        </form>
+            <div class="container">
+                <a href="{% url 'google' %}" id="google-signin-button">
+                    <img decoding="async" src="https://developers.google.com/identity/images/g-logo.png"  alt="Google Icon">
+                    <span class="text">Sign in with Google</span>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

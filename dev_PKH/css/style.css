@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+}
+
+#google-signin-button {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#google-signin-button:hover {
+    background-color: #f0f0f0;
+}
+
+#google-signin-button > img{
+    margin-right: 10px;
+    height: 1.5rem;
+}
+
+.text {
+    font-weight: bold;
+}

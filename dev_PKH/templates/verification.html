@@ -1,0 +1,41 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap" class="wrapper">
+       <form method ="post" name="join" id="join">
+            <header>
+                <h1>HitUP 회원가입</h1>
+            </header>
+ 
+            <div id="container">
+                <div class="userInput">
+                    <!-- 아이디 입력 -->
+                    <h3>닉네임</h3>
+                    <input type="text" id="inputId" class="int check" maxlength="20">
+                </div>
+
+                {% if user.is_authenticated %} 
+                    <p>Welcome. You are logged in as {{user.username}}, {{user.email}} </p>
+                {% else %}
+                    <div class="userInput">
+                    <!-- 비밀번호 입력 -->
+                        <h3>비밀번호</h3>
+                        <input type="password" id="inputPw" class="int check" maxlength="20">
+                    </div>
+                    <!-- 비밀번호 재확인 입력 -->
+                    <div class="userInput">
+                        <h3>비밀번호 재확인</h3>
+                        <input type="password" id="inputPwCheck" class="int check" maxlength="20">
+                    </div>
+                {% endif %} 
+                <a href="logout">회원가입</a>
+            </div>
+    </div>
+</body>
+</html>
